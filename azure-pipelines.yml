@@ -4,7 +4,7 @@ trigger:
   - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Rakshi_CX
 
 steps:
   - task: Checkmarx AST@3
