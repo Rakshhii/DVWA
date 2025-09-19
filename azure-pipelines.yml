@@ -8,6 +8,8 @@ pool:
 
 steps:
   - task: Checkmarx AST@3
+  - checkout: self
+  persistCredentials: true
     inputs:
       CheckmarxService: 'CxOne Connection'
       projectName: 'Rakshhii/DVWA'
