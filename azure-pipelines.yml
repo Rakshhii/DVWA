@@ -7,9 +7,9 @@ pool:
   name: Rakshi_CX
 
 steps:
-  - task: Checkmarx AST@3
   - checkout: self
-  persistCredentials: true
+    persistCredentials: true
+  - task: Checkmarx AST@3
     inputs:
       CheckmarxService: 'CxOne Connection'
       projectName: 'Rakshhii/DVWA'
