@@ -15,7 +15,7 @@ steps:
       projectName: 'Rakshhii/DVWA'
       branchName: 'master'
       tenantName: 'cx_ind_internal_test'
-      additionalParams: --file-filter '!tests/**'
+      additionalParams: --sast-incremental false
 
   - script: echo Hello, world!
     displayName: 'Run a one-line script'
