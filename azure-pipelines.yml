@@ -4,14 +4,14 @@ trigger:
   - master
 
 pool:
-  name: Rakshi_CX
+  name: default
 
 steps:
   - checkout: self
     persistCredentials: true
   - task: Checkmarx AST@3
     inputs:
-      CheckmarxService: 'CxOne Connection'
+      CheckmarxService: 'Testing'
       projectName: 'Rakshhii/DVWA'
       branchName: 'master'
       tenantName: 'cx_ind_internal_test'
