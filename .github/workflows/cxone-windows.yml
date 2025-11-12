@@ -1,0 +1,36 @@
+name: Checkmarx One Scan (Windows)
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  cxone_scan:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Checkmarx One Scan
+        env:
+          CX_API_KEY: ${{ secrets.CX_API_KEY }}
+          CX_BASE_URI: ${{ secrets.CX_BASE_URI }}
+          CX_TENANT: ${{ secrets.CX_TENANT }}
+        run: |
+          .\tools\cx.exe scan create `
+            --project-name "${{ secrets.CX_PROJECT }}" `
+            --branch "${{ github.ref_name }}" `
+            --source . `
+            --report-format summary `
+            --output-path results\ `
+            --threshold sast-high=0
+
+      - name: Upload Scan Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cxone-scan-results
+          path: results\
