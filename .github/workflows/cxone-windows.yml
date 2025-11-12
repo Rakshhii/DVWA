@@ -34,7 +34,7 @@ jobs:
             --report-format summary `
             --output-path results\ `
             --threshold sast-high=0
-            .\
+            .
 
       - name: Upload Scan Report
         if: always()
