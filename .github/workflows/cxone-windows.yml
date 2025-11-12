@@ -16,7 +16,7 @@ jobs:
 
       - name: Download CxOne CLI
         run: |
-          Invoke-WebRequest -Uri "https://github.com/Checkmarx/ast-cli/releases/latest/download/cx_windows_amd64.zip" -OutFile "cx.zip"
+          Invoke-WebRequest -Uri "https://download.checkmarx.com/CxOne/CLI/latest/ast-cli_windows_x64.zip" -OutFile "cx.zip"
           Expand-Archive -Path "cx.zip" -DestinationPath "cx"
           # Optional: verify executable exists
           dir .\cx\
