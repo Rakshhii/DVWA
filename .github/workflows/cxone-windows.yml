@@ -20,7 +20,7 @@ jobs:
           CX_BASE_URI: ${{ secrets.CX_BASE_URI }}
           CX_TENANT: ${{ secrets.CX_TENANT }}
         run: |
-          .\tools\cx.exe scan create `
+          C:\Rakshii\cx-cli\cx.exe scan create `
             --project-name "${{ secrets.CX_PROJECT }}" `
             --branch "master" `
             --source . `
