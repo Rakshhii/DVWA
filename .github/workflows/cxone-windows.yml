@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Download CxOne CLI
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/Checkmarx/ast-cli/releases/latest/download/cx_windows_amd64.zip" -OutFile "cx.zip"
+          Expand-Archive -Path "cx.zip" -DestinationPath "cx"
+          # Optional: verify executable exists
+          dir .\cx\
+
       - name: Run Checkmarx One Scan
         env:
           CX_API_KEY: ${{ secrets.CX_API_KEY }}
