@@ -23,8 +23,8 @@ jobs:
 
       - name: Run Checkmarx One Scan
         env:
-          CX_ACCESS_KEY_ID: "4f90c9e6-ca10-4eb7-8ccd-d44d35472a59"
-          CX_ACCESS_KEY_SECRET: "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzNTM0MTE1MC0yNjFlLTRkZDctYmU0YS1kMzAzYmY4YzcwM2YifQ.eyJpYXQiOjE3NjMwMjk3MjEsImp0aSI6IjAwZGIxMmE4LTIwZTItNDZjMS1hMWExLWQwODE2ZjUzM2VkNCIsImlzcyI6Imh0dHBzOi8vaW5kLmlhbS5jaGVja21hcngubmV0L2F1dGgvcmVhbG1zL2N4X2luZF9pbnRlcm5hbF90ZXN0IiwiYXVkIjoiaHR0cHM6Ly9pbmQuaWFtLmNoZWNrbWFyeC5uZXQvYXV0aC9yZWFsbXMvY3hfaW5kX2ludGVybmFsX3Rlc3QiLCJzdWIiOiJjMzA2YTVhNi1jZTBlLTRkOTMtOTk5Ny00NTYzNzAzNDlkNzIiLCJ0eXAiOiJPZmZsaW5lIiwiYXpwIjoiYXN0LWFwcCIsInNpZCI6IjRmOTBjOWU2LWNhMTAtNGViNy04Y2NkLWQ0NGQzNTQ3MmE1OSIsInNjb3BlIjoicHJvZmlsZSBpYW0tYXBpIGdyb3VwcyByb2xlcyBlbWFpbCBhc3QtYXBpIG9mZmxpbmVfYWNjZXNzIn0._auuw6y_DaKxxGOQociiqxaOzzBDbulVsLVJ9_febyiGZFZeQS2udC8dgyT0wU-HGPnmIRCtZVszJS8mvTlr4A"
+          CX_CLIENT_ID: "Github_Action"
+          CX_CLIENT_SECRET: "OMQAEmBGeogdgYllXKtAbD6XgBfYNa12"
           CX_BASE_URI: "https://ind.ast.checkmarx.net"
           CX_TENANT: "cx_ind_internal_test"
         run: |
