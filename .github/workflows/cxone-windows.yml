@@ -36,7 +36,7 @@ jobs:
             --output-path results\ `
             --scan-types sast,sca `
             --threshold sast-high=1
-            "$PWD"
+            --file-source "$($PWD.Path)"
 
       - name: Upload Scan Report1
         if: always()
