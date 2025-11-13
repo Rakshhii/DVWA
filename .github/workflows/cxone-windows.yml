@@ -18,7 +18,6 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "https://download.checkmarx.com/CxOne/CLI/latest/ast-cli_windows_x64.zip" -OutFile "cx.zip"
           Expand-Archive -Path "cx.zip" -DestinationPath "cx"
-          # Optional: verify executable exists
           dir .\cx\
 
       - name: Run Checkmarx One Scan
@@ -29,10 +28,9 @@ jobs:
           CX_TENANT: "cx_ind_internal_test"
         run: |
           $cx = ".\cx\cx.exe"
-          & $cx scan create --project-name "***" --branch "master" --report-format summary --output-path results\ --scan-types sast,sca --threshold sast-high=1 --file-source "$($PWD.Path)"
+          & $cx scan create --project-name "***" --branch "master" --scan-types sast,sca --threshold sast-high=1 --report-format pdf --output-path results\ .
 
-
-      - name: Upload Scan Report1
+      - name: Upload Scan Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
