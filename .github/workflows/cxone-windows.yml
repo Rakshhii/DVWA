@@ -29,14 +29,8 @@ jobs:
           CX_TENANT: "cx_ind_internal_test"
         run: |
           $cx = ".\cx\cx.exe"
-          & $cx scan create `
-            --project-name "${{ secrets.CX_PROJECT }}" `
-            --branch "master" `
-            --report-format summary `
-            --output-path results\ `
-            --scan-types sast,sca `
-            --threshold sast-high=1
-            --file-source "$($PWD.Path)"
+          & $cx scan create --project-name "***" --branch "master" --report-format summary --output-path results\ --scan-types sast,sca --threshold sast-high=1 --file-source "$($PWD.Path)"
+
 
       - name: Upload Scan Report1
         if: always()
