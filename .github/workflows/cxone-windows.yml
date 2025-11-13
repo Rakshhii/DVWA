@@ -28,7 +28,7 @@ jobs:
           CX_TENANT: "cx_ind_internal_test"
         run: |
           $cx = ".\cx\cx.exe"
-          & $cx scan create --project-name "***" --branch "master" --scan-types sast,sca --threshold sast-high=1 --report-format pdf --output-path results\ .
+          & $cx scan create --project-name "Rakshhii/DVWA" --branch "master" --scan-types sast,sca --threshold sast-high=1 --report-format pdf --output-path results\ .
 
       - name: Upload Scan Report
         if: always()
