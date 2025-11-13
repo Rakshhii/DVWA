@@ -36,7 +36,7 @@ jobs:
             --threshold sast-high=0
             "$PWD"
 
-      - name: Upload Scan Report
+      - name: Upload Scan Report1
         if: always()
         uses: actions/upload-artifact@v4
         with:
