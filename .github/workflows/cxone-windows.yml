@@ -34,7 +34,7 @@ jobs:
             --branch "master" `
             --report-format summary `
             --output-path results\ `
-            --threshold sast-high=0
+            --threshold sast-high=1
             "$PWD"
 
       - name: Upload Scan Report1
