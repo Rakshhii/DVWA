@@ -17,7 +17,7 @@ steps:
       tenantName: 'cx_ind_internal_test'
       
 
-  - script: echo Hello, world!
+  - script: echo , world!
     displayName: 'Run a one-line script'
 
   - script: |
